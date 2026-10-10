@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100713">
+<title>Pour Bebee ❤️</title>
+<style>
+:root{--pink:#ff5caa;--rose:#ff2f79;--lav:#c77dff}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{font-family:"Trebuchet MS",Arial,sans-serif;color:#fff8fc;background:radial-gradient(ellipse at 50% 42%,#42102f 0%,#1a0a20 43%,#090610 100%);display:grid;place-items:center;isolation:isolate}
+.glow{position:absolute;width:min(85vw,700px);aspect-ratio:1;border-radius:50%;background:#ff267a22;filter:blur(70px);animation:breathe 5s ease-in-out infinite;z-index:-1}
+#stars,#hearts{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:white;box-shadow:0 0 9px white;animation:twinkle var(--dur) ease-in-out infinite alternate}
+.heart{position:absolute;left:var(--x);top:-50px;color:var(--c);font-size:var(--s);opacity:0;filter:drop-shadow(0 0 8px currentColor);animation:fall var(--dur) linear var(--delay) infinite}
+main{z-index:2;text-align:center;padding:25px;max-width:850px;animation:rise 1.5s ease-out both}
+.eyebrow{font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#ffc1df;margin:0 0 20px;padding-left:.38em}
+h1{font-size:clamp(42px,10vw,100px);line-height:1.05;margin:0;font-weight:900;letter-spacing:.015em;text-shadow:0 0 8px white,0 0 25px var(--pink),0 0 60px #ff176b99;animation:pulse 2.7s ease-in-out infinite}
+.name{color:#ff8fc8}
+.heart-core{display:inline-block;color:#ff5caa;animation:beat 1.15s ease-in-out infinite;text-shadow:0 0 20px #ff2f79}
+.message{font-size:clamp(16px,3.4vw,23px);line-height:1.6;color:#ffe1ef;margin:25px auto 0;max-width:620px;text-shadow:0 0 15px #ff5caa33}
+.signature{margin:25px 0 0;color:#ffadd5;font-size:14px;letter-spacing:.08em}
+.tap{margin:26px auto 0;border:1px solid #ff8fc877;background:#ff5caa12;color:#ffe9f4;border-radius:999px;padding:12px 19px;font-size:14px;cursor:pointer;box-shadow:0 0 25px #ff5caa14;transition:transform .2s,background .2s}
+.tap:hover{transform:translateY(-2px);background:#ff5caa24}
+.hidden-note{display:none;margin:20px auto 0;padding:16px 18px;max-width:500px;border:1px solid #ff8fc855;border-radius:18px;background:#210e25bb;color:#fff0f8;font-size:16px;line-height:1.6}
+.hidden-note.show{display:block;animation:rise .7s ease-out both}
+footer{position:absolute;bottom:16px;left:12px;right:12px;text-align:center;font-size:10px;letter-spacing:.08em;color:#f9c7df88;z-index:2}
+@keyframes fall{0%{transform:translateY(-5vh) translateX(0) rotate(0);opacity:0}10%{opacity:var(--op)}90%{opacity:var(--op)}100%{transform:translateY(115vh) translateX(var(--drift)) rotate(360deg);opacity:0}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.2)}30%{transform:scale(1)}45%{transform:scale(1.12)}60%{transform:scale(1)}}
+@keyframes breathe{0%,100%{transform:scale(.9);opacity:.6}50%{transform:scale(1.12);opacity:1}}
+@keyframes twinkle{from{opacity:.12;transform:scale(.7)}to{opacity:.9;transform:scale(1.5)}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div><div id="stars" aria-hidden="true"></div><div id="hearts" aria-hidden="true"></div>
+<main>
+<p class="eyebrow">Za tsy antitra zany 😂</p>
+<h1>For U <span class="name">GrandMa</span> <span class="heart-core">♥</span></h1>
+<p class="message">What if i'm a Bee? …<br>Would U accept Me as Ur HONEY. 💗</p>
+<p class="signature">if YES send me a cute selfie , if NO U owe me ice cream 😌😂</p>
+<button class="tap" id="reveal">There's a little secret here … 💌</button>
+<div class="hidden-note" id="note">Santa will grab U by the way.😌❤️</div>
+</main>
+<footer>Take care Bebee.❤️</footer>
+<script>
+const stars=document.getElementById("stars"),hearts=document.getElementById("hearts");
+for(let i=0;i<95;i++){let s=document.createElement("i");s.className="star";s.style.left=Math.random()*100+"%";s.style.top=Math.random()*100+"%";s.style.setProperty("--dur",1.4+Math.random()*4+"s");s.style.animationDelay=Math.random()*-5+"s";stars.appendChild(s)}
+const symbols=["♥","♡","❤","💕","💗"],colors=["#ff5caa","#ff2f79","#ff9ccc","#c77dff","#ffd8e9"];
+for(let i=0;i<42;i++){let h=document.createElement("span");h.className="heart";h.textContent=symbols[Math.floor(Math.random()*symbols.length)];h.style.setProperty("--x",Math.random()*100+"%");h.style.setProperty("--s",14+Math.random()*25+"px");h.style.setProperty("--c",colors[Math.floor(Math.random()*colors.length)]);h.style.setProperty("--dur",7+Math.random()*10+"s");h.style.setProperty("--delay",Math.random()*-17+"s");h.style.setProperty("--drift",(Math.random()-.5)*160+"px");h.style.setProperty("--op",(.3+Math.random()*.6).toFixed(2));hearts.appendChild(h)}
+document.getElementById("reveal").addEventListener("click",()=>{document.getElementById("note").classList.add("show");document.getElementById("reveal").textContent="That's all for now 😂❤️";});
+</script>
+</body>
+</html>
